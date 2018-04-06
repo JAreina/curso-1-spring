@@ -5,7 +5,7 @@ public class Administrador {
 	
 	private int id;
 	private String nombre;
-	
+	private Direccion direccion;
 	
 	public Administrador() {};
 	
@@ -16,6 +16,14 @@ public class Administrador {
 	}
 
 	
+
+	public Direccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion= direccion;
+	}
 
 	public int getId() {
 		return id;
@@ -33,12 +41,14 @@ public class Administrador {
 		this.nombre = nombre;
 	}
 
+	
+
+
+
 	@Override
 	public String toString() {
-		return "Administrador [id=" + id + ", nombre=" + nombre + "]";
+		return "Administrador [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + "]";
 	}
-
-
 
 	public void imprimir() {
 		System.out.println("hola");
