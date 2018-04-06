@@ -4,5 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="admin" class="jareina.Administrador"></bean>
+	<bean id="admin" class="jareina.Administrador">
+
+	<property name="id" value="66"></property>
+	<property name="nombre" value="Eva"></property>
+	</bean>
 </beans>
