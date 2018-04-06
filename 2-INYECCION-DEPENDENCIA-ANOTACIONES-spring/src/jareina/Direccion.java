@@ -1,5 +1,7 @@
 package jareina;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 // sin usar archivo xml de config con @Component 
@@ -23,6 +25,23 @@ public class Direccion {
 	@Override
 	public String toString() {
 		return "Direccion [calle=" + calle + ", cp=" + cp + "]";
+	}
+
+	public String getCalle() {
+		return calle;
+	}
+
+	@Autowired
+	public void setCalle(@Value("valor por defecto de calle")String calle) {
+		this.calle = calle;
+	}
+
+	public String getCp() {
+		return cp;
+	}
+      @Autowired
+	public void setCp(@Value("valor por defecto codigo postal")String cp) {
+		this.cp = cp;
 	};
 	
 	

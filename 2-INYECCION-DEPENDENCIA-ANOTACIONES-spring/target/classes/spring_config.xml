@@ -14,9 +14,6 @@
 		<property name="nombre" value="Juanito"></property>
 	</bean>
 
-<!-- 	<bean id="direccion" class="com.novellius.Direccion"> -->
-<!-- 		<constructor-arg name="calle" value="Encino"></constructor-arg> -->
-<!-- 	<constructor-arg name="cp" value="99999"></constructor-arg> -->
-<!-- 	</bean> -->
+
 	<context:component-scan base-package="jareina"></context:component-scan>
 </beans>
