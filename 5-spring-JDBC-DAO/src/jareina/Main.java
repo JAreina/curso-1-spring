@@ -1,6 +1,7 @@
 package jareina;
 
 import java.util.Date;
+import java.util.List;
 import java.sql.Timestamp;
 
 import org.springframework.context.ApplicationContext;
@@ -34,6 +35,15 @@ public class Main {
 		try {
 			adminDao.save(admin);
 			System.out.println("ADMINISTRADOR GURARDADO");
+			
+			
+			List<Admin> adminList = adminDao.findAll();
+			
+			for(Admin a : adminList) {
+				System.out.println(a);
+			}
+			
+			
 		} catch (CannotGetJdbcConnectionException e) {
 			// TODO: handle exception
 			e.printStackTrace();
