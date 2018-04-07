@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 public class Conexion {
 	
-	///   CONEXION DE PRUEBA 
+	///   CONEXION DE PRUEBA  sin spring 
 
 		    public static void main(String[] args) throws Exception {
 	
