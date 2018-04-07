@@ -1,0 +1,14 @@
+
+
+control + shift +c  : comentar codigo 
+
+
+Añnotaciones
+
+
+
+dao : data access object ... permite acceso a una bse de datos o cualquier persistencia de datos
+        mediante interfaces
+        
+        
+        
