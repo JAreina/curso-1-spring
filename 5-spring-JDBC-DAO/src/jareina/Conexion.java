@@ -20,7 +20,7 @@ public class Conexion {
 		  BasicDataSource dataSource = new BasicDataSource();
 		 
 	
-		  dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		  dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 	
 		  dataSource.setUrl("jdbc:mysql://localhost:3306/spring-bd?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC");
 
@@ -39,7 +39,7 @@ public class Conexion {
 		conn = dataSource.getConnection();
 	
 		stmt = conn.prepareStatement("INSERT INTO Admin (nombre) values (?)");
-		stmt.setString(1, "pepe");
+		stmt.setString(1, "pepedddddddddddd");
 	
 		int rs = stmt.executeUpdate();
 	

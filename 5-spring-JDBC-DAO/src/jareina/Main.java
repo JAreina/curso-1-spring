@@ -5,6 +5,8 @@ import java.sql.Timestamp;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 
 import jareina.dao.AdminDao;
 import jareina.pojo.Admin;
@@ -23,17 +25,21 @@ public class Main {
 		
 		Admin admin = new Admin();
 		admin.setCargo("DESARROLLADOR");
-		admin.setNombre("Juan Juan");
+		admin.setNombre("Juan excepciones Juan");
 		admin.setFechaCreacion(fecha);
 		
 
-		if(adminDao.save(admin)) {
+	
+		
+		try {
+			adminDao.save(admin);
 			System.out.println("ADMINISTRADOR GURARDADO");
-		}else {
-			System.out.println("no GURARDADO");
+		} catch (CannotGetJdbcConnectionException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}catch(DataAccessException e) {
+			e.printStackTrace();
 		}
-		
-		
 		
 		((ClassPathXmlApplicationContext)applicationContext).close();
 	}
