@@ -14,11 +14,12 @@
 	<context:component-scan base-package="jareina"></context:component-scan>
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-	<property name="url"
-		value="jdbc:mysql://localhost:3306/spring-bd">
-	</property>
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+	
 	<property name="username" value="juan"></property>
 	<property name="password" value="juan"></property>
+	<property name="url"
+		value="jdbc:mysql://localhost:3306/spring-bd?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC">
+	</property>
 	</bean>
 </beans>
