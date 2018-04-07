@@ -9,4 +9,7 @@ public interface AdminDao {
 	public boolean save(Admin admin) ;
 	
 	public List<Admin> findAll();
+	
+	public Admin encontrarPorId(int id);
+	public List<Admin> encontrarPorNombre(String nombre);
 }

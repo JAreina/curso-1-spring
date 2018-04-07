@@ -14,6 +14,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import jareina.pojo.Admin;
+import jareina.pojo.AdminRowMapper;
 
 @Component("adminDao")
 public class AdminDaoImpl implements AdminDao{
@@ -68,6 +69,26 @@ public class AdminDaoImpl implements AdminDao{
 			}
 			
 		});
+	}
+
+	@Override
+	public Admin encontrarPorId(int id) {
+		// UNA FORMA DE HACERLO
+//		return (Admin) jdbcTemplate.query("select * from Admin where idAd=:idAd", 
+//				                           new MapSqlParameterSource("idAd",id), 
+//				                           new AdminRowMapper());
+		return jdbcTemplate.queryForObject("select * from Admin where idAd=:idAd", 
+								               new MapSqlParameterSource("idAd",id), 
+								               new AdminRowMapper());
+	}
+
+	@Override
+	public List<Admin> encontrarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.query("select * from Admin where nombre like :nombre", 
+	               new MapSqlParameterSource("nombre","%"+nombre+"%"), 
+	               new AdminRowMapper());
+
 	}
 
 }

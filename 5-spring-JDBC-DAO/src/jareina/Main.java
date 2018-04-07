@@ -33,16 +33,31 @@ public class Main {
 	
 		
 		try {
+			
+			// GUARDAR
 			adminDao.save(admin);
 			System.out.println("ADMINISTRADOR GURARDADO");
 			
 			
+			// LISTAR
 			List<Admin> adminList = adminDao.findAll();
 			
 			for(Admin a : adminList) {
 				System.out.println(a);
 			}
+             // BUSCAR POR ID
+			Admin ad;
+			ad = adminDao.encontrarPorId(2);
+			System.out.println("ENCONTRADO POR ID: "+ ad.toString());
 			
+			//buscar por nombre 
+			List<Admin> ad2;
+			ad2= adminDao.encontrarPorNombre("juan");
+			System.out.println("LISTADO ");
+			for(Admin a : ad2) {
+				
+				System.out.println(a);
+			}
 			
 		} catch (CannotGetJdbcConnectionException e) {
 			// TODO: handle exception
