@@ -12,4 +12,6 @@ public interface AdminDao {
 	
 	public Admin encontrarPorId(int id);
 	public List<Admin> encontrarPorNombre(String nombre);
+	public boolean actualiza(Admin admin);
+	public boolean borrar(int idAd);
 }

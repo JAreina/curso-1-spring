@@ -91,4 +91,19 @@ public class AdminDaoImpl implements AdminDao{
 
 	}
 
+	@Override
+	public boolean actualiza(Admin admin) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("Update Admin set nombre=:nombre, cargo=:cargo, fechaCreacion=:fechaCreacion where idAd=:idAd", 
+				new BeanPropertySqlParameterSource(admin))==1;
+	}
+
+	@Override
+	public boolean borrar(int idAd) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("delete from  Admin where idAd=:idAd", 
+				  new MapSqlParameterSource("idAd", idAd))==1;
+	}
+	
+
 }
