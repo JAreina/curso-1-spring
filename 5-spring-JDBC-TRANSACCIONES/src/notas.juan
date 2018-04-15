@@ -1,0 +1,45 @@
+
+
+control + shift +c  : comentar codigo 
+
+
+Añnotaciones
+
+
+
+dao : data access object ... permite acceso a una bse de datos o cualquier persistencia de datos
+        mediante interfaces
+        
+        
+       
+       
+       TRANSACCIONES 
+       
+       *************
+       
+       
+        CONGIGURAR spring_config.xml
+        
+         1 creara nuevo bean
+        
+             id : transactionManager
+             class: DataSourceTrans
+        
+             añadir propiedad al bean: dataSource
+        
+        
+        
+         2  en namespaces habilitar la notacion transacional
+             la casilla tx
+             
+             en la pestaña tx añadir al bean
+             click derecho : insert annotattion driven
+             
+             
+             
+             
+             ya podemos usar la anotación @Transactional
+             
+             
+             
+             
