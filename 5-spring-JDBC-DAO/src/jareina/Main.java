@@ -1,5 +1,6 @@
 package jareina;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.sql.Timestamp;
@@ -75,20 +76,36 @@ public class Main {
 //			}
 //			
 			// actualizar 
-			Admin adminActualizado = adminDao.encontrarPorId(13);
-			adminActualizado.setCargo("ACTUALIZADO");
-			adminActualizado.setNombre("actualizado");
-			System.out.println(adminActualizado.toString());
-			adminDao.actualiza(adminActualizado);
-			
-			Admin a= Main.buscarPorId(adminActualizado.getIdAd(), adminDao);
+//			Admin adminActualizado = adminDao.encontrarPorId(13);
+//			adminActualizado.setCargo("ACTUALIZADO");
+//			adminActualizado.setNombre("actualizado");
+//			System.out.println(adminActualizado.toString());
+//			adminDao.actualiza(adminActualizado);
+//			
+//			Admin a= Main.buscarPorId(adminActualizado.getIdAd(), adminDao);
 			
 			
 			
 			// BORRAR 
-			boolean borrado = adminDao.borrar(a.getIdAd());
+//			boolean borrado = adminDao.borrar(a.getIdAd());
+//			
+//			System.out.print(borrado +"  BORRADO ----");
 			
-			System.out.print(borrado +"  BORRADO ----");
+			
+			// batch update
+			Timestamp fechac = new Timestamp(new Date().getTime());
+			List<Admin> admins= new ArrayList<Admin>();
+			admins.add(new Admin("batch1","jefe1",fechac));
+			admins.add(new Admin("batch2","jefe2",fechac));
+			admins.add(new Admin("batch3","jefe3",fechac));
+			admins.add(new Admin("batch4","jefe4",fechac));
+			
+			
+			int [] retorno = adminDao.salvarTodos(admins);
+			
+			for(int i =0; i<retorno.length;i++) {
+				System.out.println("FILA AFECTADA: " +retorno[i]);
+			}
 			
 		} catch (CannotGetJdbcConnectionException e) {
 			// TODO: handle exception

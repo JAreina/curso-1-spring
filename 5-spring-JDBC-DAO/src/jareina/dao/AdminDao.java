@@ -14,4 +14,6 @@ public interface AdminDao {
 	public List<Admin> encontrarPorNombre(String nombre);
 	public boolean actualiza(Admin admin);
 	public boolean borrar(int idAd);
+	//batch update: guardar varios registros al mismo tiempo
+	public int [] salvarTodos(List<Admin> administradores);
 }
