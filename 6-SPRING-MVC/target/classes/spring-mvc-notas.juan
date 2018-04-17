@@ -1,0 +1,22 @@
+
+
+CREAR DISPATCHER SERVLET
+
+  -- CREAR SERVLET --- USAR CLASE YA DEFINIDA -- BUSCAR DispatcherServlet
+  
+       ponerle nombre
+       en url mapping que atienda las peticiones a /
+       
+       mirar en el archivo: web.xml
+       
+  --  crear archivo de configuracion spring para crear el bean 
+      de view revolver en WebContent/ web-inf
+      
+      crear spring bean configuration file
+      el nombre de este archivo debe ser como el del servlet creado
+      
+      miDispatcherServlet-servlet.xml
+      
+      
+      
+      
